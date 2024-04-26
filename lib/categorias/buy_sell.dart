@@ -8,12 +8,11 @@ class Buy_Sell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          appBar: AppBar(
+        appBar: AppBar(
           backgroundColor: Colors.orange, // Color azul
-           // Título del AppBar
+          // Título del AppBar
           actions: <Widget>[
             // Widget para mostrar la imagen
             Image.asset(
@@ -27,72 +26,177 @@ class Buy_Sell extends StatelessWidget {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 3,),
+              const SizedBox(
+                height: 3,
+              ),
               Container(
-                  width: double.infinity,
-                  height: 50,
-                  decoration: const BoxDecoration(
-                    color: Colors.orange,
-                  
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black,
-                        offset: Offset(4.0, 4.0),
-                        blurRadius: 10.0,
-                        spreadRadius: 1.0,
-                      ),
-                      BoxShadow(
-                        color: Colors.white,
-                        offset: Offset(-4.0, -4.0),
-                        blurRadius: 10.0,
-                        spreadRadius: 1.0,
-                      ),
-                    ],
-                  ),
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Icon(
-                                Icons.attach_money, // Icono de dinero
-                                size: 50.0, // Tamaño del icono
-                                color: Colors.white, // Color del icono
-                              ),Icon(
-                                Icons.mail, // Icono de dinero
-                                size: 50.0, // Tamaño del icono
-                                color: Colors.white, // Color del icono
-                              ),Icon(
-                                Icons.phone_android, // Icono de dinero
-                                size: 50.0, // Tamaño del icono
-                                color: Colors.white, // Color del icono
-                              ),Icon(
-                                Icons.newspaper, // Icono de dinero
-                                size: 50.0, // Tamaño del icono
-                                color: Colors.white, // Color del icono
-                              ),Icon(
-                                Icons.touch_app, // Icono de dinero
-                                size: 50.0, // Tamaño del icono
-                                color: Colors.white, // Color del icono
-                              ),Icon(
-                                Icons.people, // Icono de dinero
-                                size: 50.0, // Tamaño del icono
-                                color: Colors.white, // Color del icono
-                              ),
-                    ],
-                  ),
+                width: double.infinity,
+                height: 50,
+                decoration: const BoxDecoration(
+                  color: Colors.orange,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black,
+                      offset: Offset(4.0, 4.0),
+                      blurRadius: 10.0,
+                      spreadRadius: 1.0,
+                    ),
+                    BoxShadow(
+                      color: Colors.white,
+                      offset: Offset(-4.0, -4.0),
+                      blurRadius: 10.0,
+                      spreadRadius: 1.0,
+                    ),
+                  ],
                 ),
-         
-               const SizedBox(height: 50),
-              GestureDetector(
-                onTap: () {
-                  Navigator.of(context).pushNamed('iniciar_sesion');
-                },
+                child:  Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Icon(
+                      Icons.attach_money, // Icono de dinero
+                      size: 50.0, // Tamaño del icono
+                      color: Colors.white, // Color del icono
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                          Navigator.of(context).pushNamed('empleo');
+                      },
+                      child: Icon(
+                        Icons.work, // Icono de dinero
+                        size: 50.0, // Tamaño del icono
+                        color: Colors.white, // Color del icono
+                      ),
+                    ),
+                    Icon(
+                      Icons.phone_android, // Icono de dinero
+                      size: 50.0, // Tamaño del icono
+                      color: Colors.white, // Color del icono
+                    ),
+                    Icon(
+                      Icons.newspaper, // Icono de dinero
+                      size: 50.0, // Tamaño del icono
+                      color: Colors.white, // Color del icono
+                    ),
+                    Icon(
+                      Icons.touch_app, // Icono de dinero
+                      size: 50.0, // Tamaño del icono
+                      color: Colors.white, // Color del icono
+                    ),
+                    Icon(
+                      Icons.people, // Icono de dinero
+                      size: 50.0, // Tamaño del icono
+                      color: Colors.white, // Color del icono
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                       Navigator.of(context).pushNamed('sell');
+                    },
+                    child: Container(
+                      width: 100,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: Colors.orangeAccent,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.black,
+                            offset: Offset(4.0, 4.0),
+                            blurRadius: 10.0,
+                            spreadRadius: 1.0,
+                          ),
+                          BoxShadow(
+                            color: Colors.white,
+                            offset: Offset(-4.0, -4.0),
+                            blurRadius: 10.0,
+                            spreadRadius: 1.0,
+                          ),
+                        ],
+                      ),
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.add, // Icono de dinero
+                            size: 20.0, // Tamaño del icono
+                            color: Colors.white, // Color del icono
+                          ),
+                          Text(
+                            'Vender ',
+                            style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 30,
+                  ),
+                  Container(
+                    width: 250,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Colors.orangeAccent,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.black,
+                          offset: Offset(4.0, 4.0),
+                          blurRadius: 10.0,
+                          spreadRadius: 1.0,
+                        ),
+                        BoxShadow(
+                          color: Colors.white,
+                          offset: Offset(-4.0, -4.0),
+                          blurRadius: 10.0,
+                          spreadRadius: 1.0,
+                        ),
+                      ],
+                    ),
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Que quieres comparar',
+                          style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Icon(
+                          Icons.search, // Icono de dinero
+                          size: 20.0, // Tamaño del icono
+                          color: Colors.white, // Color del icono
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: Container(
-                  width: 300,
-                  height: 100,
+                  width: double.infinity,
+                  height: 500,
                   decoration: BoxDecoration(
-                    color: Colors.orangeAccent,
-                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
                     boxShadow: const [
                       BoxShadow(
                         color: Colors.black,
@@ -108,22 +212,510 @@ class Buy_Sell extends StatelessWidget {
                       ),
                     ],
                   ),
-                  child: const Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Iniciar Sesión',
-                        style: TextStyle(
-                          fontSize: 23,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                  child: Container(
+                    child: ListView(
+                      children: [
+                          Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            width: 200,
+                            height: 200,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Colors.black,
+                                  offset: Offset(4.0, 4.0),
+                                  blurRadius: 10.0,
+                                  spreadRadius: 1.0,
+                                ),
+                                BoxShadow(
+                                  color: Colors.white,
+                                  offset: Offset(-4.0, -4.0),
+                                  blurRadius: 10.0,
+                                  spreadRadius: 1.0,
+                                ),
+                              ],
+                            ),
+                            child: Column(children: [
+                              const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Icon(
+                                      Icons.photo, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.black, // Color del icono
+                                    ),
+                                    Text('Ivanovich'),
+                                    Icon(
+                                      Icons.more_horiz, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.black, // Color del icono
+                                    ),
+                                  ]),
+                                  Expanded(child: Image.asset('assets/images/images.jpeg',)),
+                                  const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Icon(
+                                      Icons.favorite, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.red, // Color del icono
+                                    ),
+                                    Icon(
+                                      Icons.message, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.orange, // Color del icono
+                                    ),
+
+                                  Icon(
+                                      Icons.send, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.orange, // Color del icono
+                                    ),
+                                    Icon(
+                                      Icons.circle_notifications, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.orange, // Color del icono
+                                    ),
+                                   
+                                  ]),
+                            ]),
+                          ),
+                        ),  Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            width: 200,
+                            height: 200,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Colors.black,
+                                  offset: Offset(4.0, 4.0),
+                                  blurRadius: 10.0,
+                                  spreadRadius: 1.0,
+                                ),
+                                BoxShadow(
+                                  color: Colors.white,
+                                  offset: Offset(-4.0, -4.0),
+                                  blurRadius: 10.0,
+                                  spreadRadius: 1.0,
+                                ),
+                              ],
+                            ),
+                            child: Column(children: [
+                              const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Icon(
+                                      Icons.photo, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.black, // Color del icono
+                                    ),
+                                    Text('Ivanovich'),
+                                    Icon(
+                                      Icons.more_horiz, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.black, // Color del icono
+                                    ),
+                                  ]),
+                                  Expanded(child: Image.asset('assets/images/gan.jpg',)),
+                                  const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Icon(
+                                      Icons.favorite, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.red, // Color del icono
+                                    ),
+                                    Icon(
+                                      Icons.message, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.orange, // Color del icono
+                                    ),
+
+                                  Icon(
+                                      Icons.send, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.orange, // Color del icono
+                                    ),
+                                    Icon(
+                                      Icons.circle_notifications, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.orange, // Color del icono
+                                    ),
+                                   
+                                  ]),
+                            ]),
+                          ),
+                        ),  Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            width: 200,
+                            height: 200,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Colors.black,
+                                  offset: Offset(4.0, 4.0),
+                                  blurRadius: 10.0,
+                                  spreadRadius: 1.0,
+                                ),
+                                BoxShadow(
+                                  color: Colors.white,
+                                  offset: Offset(-4.0, -4.0),
+                                  blurRadius: 10.0,
+                                  spreadRadius: 1.0,
+                                ),
+                              ],
+                            ),
+                            child: Column(children: [
+                              const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Icon(
+                                      Icons.photo, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.black, // Color del icono
+                                    ),
+                                    Text('Ivanovich'),
+                                    Icon(
+                                      Icons.more_horiz, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.black, // Color del icono
+                                    ),
+                                  ]),
+                                  Expanded(child: Image.asset('assets/images/play.jpeg',)),
+                                  const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Icon(
+                                      Icons.favorite, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.red, // Color del icono
+                                    ),
+                                    Icon(
+                                      Icons.message, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.orange, // Color del icono
+                                    ),
+
+                                  Icon(
+                                      Icons.send, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.orange, // Color del icono
+                                    ),
+                                    Icon(
+                                      Icons.circle_notifications, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.orange, // Color del icono
+                                    ),
+                                   
+                                  ]),
+                            ]),
+                          ),
+                        ),  Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            width: 200,
+                            height: 200,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Colors.black,
+                                  offset: Offset(4.0, 4.0),
+                                  blurRadius: 10.0,
+                                  spreadRadius: 1.0,
+                                ),
+                                BoxShadow(
+                                  color: Colors.white,
+                                  offset: Offset(-4.0, -4.0),
+                                  blurRadius: 10.0,
+                                  spreadRadius: 1.0,
+                                ),
+                              ],
+                            ),
+                            child: Column(children: [
+                              const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Icon(
+                                      Icons.photo, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.black, // Color del icono
+                                    ),
+                                    Text('Ivanovich'),
+                                    Icon(
+                                      Icons.more_horiz, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.black, // Color del icono
+                                    ),
+                                  ]),
+                                  Expanded(child: Image.asset('assets/images/fin.jpeg',)),
+                                  const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Icon(
+                                      Icons.favorite, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.red, // Color del icono
+                                    ),
+                                    Icon(
+                                      Icons.message, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.orange, // Color del icono
+                                    ),
+
+                                  Icon(
+                                      Icons.send, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.orange, // Color del icono
+                                    ),
+                                    Icon(
+                                      Icons.circle_notifications, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.orange, // Color del icono
+                                    ),
+                                   
+                                  ]),
+                            ]),
+                          ),
                         ),
-                      ),
-                    ],
+                         Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            width: 200,
+                            height: 200,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Colors.black,
+                                  offset: Offset(4.0, 4.0),
+                                  blurRadius: 10.0,
+                                  spreadRadius: 1.0,
+                                ),
+                                BoxShadow(
+                                  color: Colors.white,
+                                  offset: Offset(-4.0, -4.0),
+                                  blurRadius: 10.0,
+                                  spreadRadius: 1.0,
+                                ),
+                              ],
+                            ),
+                            child: Column(children: [
+                              const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Icon(
+                                      Icons.photo, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.black, // Color del icono
+                                    ),
+                                    Text('Ivanovich'),
+                                    Icon(
+                                      Icons.more_horiz, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.black, // Color del icono
+                                    ),
+                                  ]),
+                                  Expanded(child: Image.asset('assets/images/call.jpeg',)),
+                                  const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Icon(
+                                      Icons.favorite, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.red, // Color del icono
+                                    ),
+                                    Icon(
+                                      Icons.message, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.orange, // Color del icono
+                                    ),
+
+                                  Icon(
+                                      Icons.send, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.orange, // Color del icono
+                                    ),
+                                    Icon(
+                                      Icons.circle_notifications, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.orange, // Color del icono
+                                    ),
+                                   
+                                  ]),
+                            ]),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            width: 200,
+                            height: 200,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Colors.black,
+                                  offset: Offset(4.0, 4.0),
+                                  blurRadius: 10.0,
+                                  spreadRadius: 1.0,
+                                ),
+                                BoxShadow(
+                                  color: Colors.white,
+                                  offset: Offset(-4.0, -4.0),
+                                  blurRadius: 10.0,
+                                  spreadRadius: 1.0,
+                                ),
+                              ],
+                            ),
+                            child: Column(children: [
+                              const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Icon(
+                                      Icons.photo, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.black, // Color del icono
+                                    ),
+                                    Text('Ivanovich'),
+                                    Icon(
+                                      Icons.more_horiz, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.black, // Color del icono
+                                    ),
+                                  ]),
+                                  Expanded(child: Image.asset('assets/images/class.jpeg',)),
+                                  const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Icon(
+                                      Icons.favorite, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.red, // Color del icono
+                                    ),
+                                    Icon(
+                                      Icons.message, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.orange, // Color del icono
+                                    ),
+
+                                  Icon(
+                                      Icons.send, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.orange, // Color del icono
+                                    ),
+                                    Icon(
+                                      Icons.circle_notifications, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.orange, // Color del icono
+                                    ),
+                                   
+                                  ]),
+                            ]),
+                          ),
+                        ),
+                         Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            width: 200,
+                            height: 200,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Colors.black,
+                                  offset: Offset(4.0, 4.0),
+                                  blurRadius: 10.0,
+                                  spreadRadius: 1.0,
+                                ),
+                                BoxShadow(
+                                  color: Colors.white,
+                                  offset: Offset(-4.0, -4.0),
+                                  blurRadius: 10.0,
+                                  spreadRadius: 1.0,
+                                ),
+                              ],
+                            ),
+                            child: Column(children: [
+                              const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Icon(
+                                      Icons.photo, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.black, // Color del icono
+                                    ),
+                                    Text('Ivanovich'),
+                                    Icon(
+                                      Icons.more_horiz, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.black, // Color del icono
+                                    ),
+                                  ]),
+                                  Expanded(child: Image.asset('assets/images/toys.jpeg',)),
+                                  const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Icon(
+                                      Icons.favorite, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.red, // Color del icono
+                                    ),
+                                    Icon(
+                                      Icons.message, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.orange, // Color del icono
+                                    ),
+
+                                  Icon(
+                                      Icons.send, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.orange, // Color del icono
+                                    ),
+                                    Icon(
+                                      Icons.circle_notifications, // Icono de dinero
+                                      size: 30.0, // Tamaño del icono
+                                      color: Colors.orange, // Color del icono
+                                    ),
+                                   
+                                  ]),
+                            ]),
+                          ),
+                        ),
+
+                        // Agrega más elementos ListTile según sea necesario
+                      ],
+                    ),
                   ),
                 ),
               ),
-              
             ],
           ),
         ),

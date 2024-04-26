@@ -181,7 +181,7 @@ class Home extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      // Navigator.of(context).pushNamed('');
+                       Navigator.of(context).pushNamed('tlaxcala');
                     },
                     child: Container(
                       width: 150,
